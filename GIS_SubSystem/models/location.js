@@ -8,7 +8,7 @@ var Loc = new mongoose.Schema({
   name: String,
   description: String,
   x_coordinate: String,
-  z_coordinate: String,
+  y_coordinate: String,
   z_coordinate: String
 });
 
