@@ -1,0 +1,28 @@
+{
+  "name": "broadsword-gis-api",
+  "version": "0.0.0",
+  "description": "GIS API for Team Broadsword",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sjohandup/SE_BroadSword-GIS"
+  },
+  "keywords": [
+    "Express.js"
+  ],
+  "author": "Team Broadsword-GIS",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "config": "^1.25.1",
+    "debug": "^2.6.3",
+    "express": "4.15.2",
+    "lodash": "^4.17.4",
+    "mongo": "^0.1.0",
+    "mongoose": "^4.9.1",
+    "nodemon": "^1.11.0"
+  }
+}
