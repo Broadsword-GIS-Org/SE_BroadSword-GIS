@@ -40,4 +40,9 @@ app.use(errors);
 debug('Creating server');
 app.listen(3000, function(){
   debug('Listening on http://localhost:3000');
+
+  //function to add location
+  //function to remove location
+
+  //function to modify location
 });
