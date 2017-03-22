@@ -4,8 +4,7 @@
   "description": "GIS API for Team Broadsword",
   "main": "index.js",
   "scripts": {
-    "start": "npm run start:debug",
-    "start:debug": "DEBUG=broadsword-gis-api* nodemon"
+    "start": "nodemon"
   },
   "repository": {
     "type": "git",
