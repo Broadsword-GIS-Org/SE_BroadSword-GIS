@@ -94,6 +94,38 @@ module.exports.patch = function(req, res, next) {
      });
 }
 
+debug('Exporting method: getByName');
+module.exports.getByName = function(req,res, next){
+	debug('Extracting location name from params');
+	var _name = req.params.name;
+	
+	debug('Trying to find location with name: ' + _name);
+	if(err) return next(err);
+    if(!location) return next(new Error('Location not found.'));
+	
+	    debug('Building JSON:API response');
+    var response = {
+      data: {
+        type: 'locations',
+        _name: location.name,
+        attributes: {
+          name: location.name,
+          description: location.description,
+          x_coordinate: location.x_coordinate,
+          y_coordinate: location.y_coordinate,
+          z_coordinate: location.z_coordinate
+        }
+      }
+    };
+  
+	debug('Sending response (status: 200)');
+    res.status(200).send(response);
+  });
+};
+
+
+
+
 debug('Exporting method: getById');
 module.exports.getById = function(req, res, next){
   debug('Extracting location id from params');
