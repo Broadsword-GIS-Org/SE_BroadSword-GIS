@@ -151,5 +151,5 @@ module.exports.getByName = function(req,res, next){
     };
 	debug('Sending response (status: 200)');
     res.status(200).send(response);
-  };
+  });
 };
