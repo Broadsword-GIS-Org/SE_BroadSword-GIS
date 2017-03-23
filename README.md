@@ -12,5 +12,4 @@ Dimpho | Mahoko | 15175091
 Bernhard | Schuld | 10297902
 Mankgwanyane | Tlaka | 14351872
 Kamogelo | Tsipa | 13010931
-Rian H | van der Mewe | 15101283
-
+Hendrik | van der Mewe | 15101283
