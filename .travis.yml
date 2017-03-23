@@ -12,7 +12,8 @@ install:
   - npm install
 
 before_script:
-  - mongod
+  - mongod --fork
+  - sleep 15
 
 script:
   - npm start
