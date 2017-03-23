@@ -5,6 +5,9 @@ language: node_js
 node_js:
   - "7"
 
+services:
+  - mongodb
+
 before_install:
   - npm install -g nodemon
 
@@ -12,7 +15,7 @@ install:
   - npm install
 
 before_script:
-  - mongod --fork
+  - mongod
   - sleep 15
 
 script:
