@@ -3,17 +3,17 @@ sudo: required
 
 language: node_js
 
-# before_install:
-#   - npm install -g nodemon
-#
-# install:
-#   - npm install
-#
-# before_script:
-#   - mongod
-#
-# script:
-#   - npm start
-#
-# after_script:
-#   - mongod --shutdown
+before_install:
+  - npm install -g nodemon
+
+install:
+  - npm install
+
+before_script:
+  - mongod
+
+script:
+  - npm start
+
+after_script:
+  - mongod --shutdown
