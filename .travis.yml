@@ -14,12 +14,5 @@ before_install:
 install:
   - npm install
 
-before_script:
-  - mongod
-  - sleep 15
-
 script:
   - npm start
-
-after_script:
-  - mongod --shutdown
