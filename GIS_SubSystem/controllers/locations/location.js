@@ -124,3 +124,32 @@ module.exports.getById = function(req, res, next){
     res.status(200).send(response);
   });
 };
+
+debug('Exporting method: getByName');
+module.exports.getByName = function(req,res, next){
+	debug('Extracting location name from params');
+	var name = req.params.name;
+	
+	debug('Trying to find location with name: ' + name);
+	Loc.findOne({'_id': id.toString()}, function(err, location){
+	if(err) return next(err);
+    if(!location) return next(new Error('Building not found.'));
+	
+	    debug('Building JSON:API response');
+    var response = {
+		data: {
+        type: 'locations',
+        name: location.name,
+        attributes: {
+          name: location.name,
+          description:  location.description,
+          x_coordinate: location.x_coordinate,
+          y_coordinate: location.y_coordinate,
+          z_coordinate: location.z_coordinate
+        }
+      }
+    };
+	debug('Sending response (status: 200)');
+    res.status(200).send(response);
+  };
+};
