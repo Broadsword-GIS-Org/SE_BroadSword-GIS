@@ -12,5 +12,5 @@
 hs_err_pid*
 
 # Node
-/GIS_SubSystem/node_modules
-/GIS_SubSystem/npm-*.log
+node_modules
+npm-*.log
