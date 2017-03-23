@@ -4,7 +4,8 @@
   "description": "GIS API for Team Broadsword",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon"
+    "start": "npm run start:debug",
+    "start:debug": "cross-env DEBUG=broadsword-gis-api* nodemon"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   "dependencies": {
     "body-parser": "^1.17.1",
     "config": "^1.25.1",
+    "cross-env": "^3.2.4",
     "debug": "^2.6.3",
     "express": "4.15.2",
     "lodash": "^4.17.4",
