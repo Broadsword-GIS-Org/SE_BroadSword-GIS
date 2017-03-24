@@ -23,9 +23,11 @@ describe('Location CREATE function: ', function() {
     });
 
     location.create(req, res);
+    //console.log(res._getData());
+    res.statusCode.should.equal(200)
+    res.on('data', function(data){
       console.log(res);
-      res.statusCode.should.equal(200)
-      //res._getData().should.have.property('name', 'test');
-      done();
+    });//.should.have.property('name', 'test');
+    done();
   });
 });

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run start:debug",
     "start:debug": "cross-env DEBUG=broadsword-gis-api* nodemon",
-    "test": "mocha -u exports test/**/*"
+    "test": "mocha test/**/*"
   },
   "repository": {
     "type": "git",
