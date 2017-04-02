@@ -6,10 +6,11 @@ debug('Initialising model: Location');
 debug('Defining schema: Location');
 var Loc = new mongoose.Schema({
   name: String,
-  description: String,
-  x_coordinate: String,
-  y_coordinate: String,
-  z_coordinate: String
+  building: String,
+  lng: Number,
+  lat: Number,
+  level: Number,
+  ground: Number
 });
 
 debug('Location model exported');

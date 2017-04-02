@@ -9,10 +9,11 @@ module.exports.create = function(req, res, next){
 
   var location = new Loc({
     name: req.body.name,
-    description: req.body.description,
-    x_coordinate: req.body.x_coordinate,
-    y_coordinate: req.body.y_coordinate,
-    z_coordinate: req.body.z_coordinate
+    building: req.body.building,
+    lng: req.body.lng,
+    lat: req.body.lat,
+    level: req.body.level,
+	ground: req.body.ground
   });
 
   location.save(function(err, location){
@@ -27,10 +28,11 @@ module.exports.create = function(req, res, next){
         id: location.id,
         attributes: {
           name: location.name,
-          description: location.description,
-          x_coordinate: location.x_coordinate,
-          y_coordinate: location.y_coordinate,
-          z_coordinate: location.z_coordinate
+          building: location.building,
+          lng: location.lng,
+          lat: location.lat,
+          level: location.level,
+		  ground: location.ground
         }
       }
     };
@@ -64,10 +66,11 @@ module.exports.patch = function(req, res, next) {
           if(!location) return next(new Error('could not find location'));
 
           loc.name = req.body.name || loc.name;
-          loc.description = req.body.description || loc.description;
-          loc.x_coordinate = req.body.x_coordinate || loc.x_coordinate;
-          loc.y_coordinate = req.body.y_coordinate || loc.y_coordinate;
-          loc.z_coordinate = req.body.z_coordinate || loc.z_coordinate;
+          loc.building = req.body.building || loc.building;
+          loc.lng = req.body.lng || loc.lng;
+          loc.lat = req.body.lat || loc.lat;
+          loc.level = req.body.level || loc.level;
+		  loc.ground = req.body.ground || loc.ground;
 
           loc.save(function(err, loc) {
                if(err) return next(err);
@@ -80,10 +83,11 @@ module.exports.patch = function(req, res, next) {
                    id: loc.id,
                    attributes: {
                      name: loc.name,
-                     description: loc.description,
-                     x_coordinate: loc.x_coordinate,
-                     y_coordinate: loc.y_coordinate,
-                     z_coordinate: loc.z_coordinate
+                     building: loc.building,
+                     lng: loc.lng,
+                     lat: loc.lat,
+                     level: loc.level,
+					 ground: loc.ground
                    }
                  }
                };
@@ -112,10 +116,11 @@ module.exports.getById = function(req, res, next){
         id: location.id,
         attributes: {
           name: location.name,
-          description: location.description,
-          x_coordinate: location.x_coordinate,
-          y_coordinate: location.y_coordinate,
-          z_coordinate: location.z_coordinate
+          building: location.building,
+          lng: location.lng,
+          lat: location.lat,
+          level: location.level,
+		  ground: location.ground
         }
       }
     };
