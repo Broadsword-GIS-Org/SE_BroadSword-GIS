@@ -21,10 +21,11 @@ module.exports.get = function(req, res, next){
         id: location.id,
         attributes: {
           name: location.name,
-          description: location.description,
-          x_coordinate: location.x_coordinate,
-          y_coordinate: location.y_coordinate,
-          z_coordinate: location.z_coordinate
+          building: location.building,
+          lng: location.lng,
+          lat: location.lat,
+          level: location.level,
+		  ground: location.ground
         }
       };
 
