@@ -1,0 +1,37 @@
+[
+{ 
+"type":"locations",
+"location_type": "Venue",
+"room": "4-4",
+"building":"IT",
+"lng": -32.364,
+"lat": 153.207,
+"level": 4,
+"ground": 2  
+ },
+ 
+{ 
+"type":"locations",
+"location_type":"Venue",
+"room":"2-54",
+"building":"EMS",
+"lng": -60.364,
+"lat": 50.207,
+"level": 2,
+"ground": 1
+ },
+
+
+{ 
+"type":"locations",
+"location_type":"Venue",
+"room":"2-54",
+"building":"IT",
+"lng": -20.364,
+"lat": 20.207,
+"level": 2,
+"ground": 2
+ }
+]
+
+
