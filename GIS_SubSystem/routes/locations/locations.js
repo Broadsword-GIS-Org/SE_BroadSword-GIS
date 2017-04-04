@@ -8,5 +8,8 @@ var router = express.Router();
 debug('Adding locations route: GET / (Description: where locations are retrieved)');
 router.get('/', locations.get); // => GET to / lists all locations
 
+debug('Adding locations route: GET /getByBuildingName/:building (Description: where locations in a specified building are retrieved)');
+router.get('/getByBuildingName/:building', locations.getByBuildingName); // => GET to /:building lists all locations at specified building
+
 debug('Locations router exported');
 module.exports = router;

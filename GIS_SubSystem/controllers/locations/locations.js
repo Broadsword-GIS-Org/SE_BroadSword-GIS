@@ -41,3 +41,43 @@ module.exports.get = function(req, res, next){
     res.status(200).send(response);
   });
 };
+
+debug('Exporting method: getByBuildingName');
+module.exports.getByBuildingName = function(req, res, next) {
+	debug('Extracting building name from params');
+	var building = req.params.building;
+	
+	debug('Trying to find locations with building: ' + building);
+	Loc.find({'building': building.toString()}, function(err, locations) {
+		debug('Checking for errors');
+		if(err) return next(err);
+		if(!locations) return next(new Error('Location not found.'));
+		
+		debug('Building JSON:API response');
+		var data = [];
+		
+		_.forEach(locations, function(location) {
+			var _data = {
+				type: 'locations',
+				id: location.id,
+				attributes: {
+					location_type: location.location_type,
+					room: location.room,
+					building: location.building,
+					lng: location.lng,
+					lat: location.lat,
+					level: location.level,
+					ground: location.ground
+				}
+			};
+			data.push(_data);
+		});
+		
+		var response = {
+			data: data
+		};
+		
+		debug('Sending response (status: 200)');
+		res.status(200).send(response);
+	});
+};
