@@ -20,7 +20,8 @@ module.exports.get = function(req, res, next){
         type: 'locations',
         id: location.id,
         attributes: {
-          name: location.name,
+          location_type: location.location_type,
+		  room: location.room,
           building: location.building,
           lng: location.lng,
           lat: location.lat,

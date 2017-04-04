@@ -5,7 +5,8 @@ debug('Initialising model: Location');
 
 debug('Defining schema: Location');
 var Loc = new mongoose.Schema({
-  name: String,
+  location_type: String,
+  room: String,
   building: String,
   lng: Number,
   lat: Number,

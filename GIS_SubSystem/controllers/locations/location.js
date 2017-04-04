@@ -8,7 +8,8 @@ module.exports.create = function(req, res, next){
   //var user = req.user;
 
   var location = new Loc({
-    name: req.body.name,
+    location_type: req.body.location_type,
+	room: req.body.room,
     building: req.body.building,
     lng: req.body.lng,
     lat: req.body.lat,
@@ -27,7 +28,8 @@ module.exports.create = function(req, res, next){
         type: 'locations',
         id: location.id,
         attributes: {
-          name: location.name,
+          location_type: location.location_type,
+		  room: location.room,
           building: location.building,
           lng: location.lng,
           lat: location.lat,
