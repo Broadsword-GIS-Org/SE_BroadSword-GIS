@@ -12,7 +12,7 @@ debug('Adding locations route: GET /getByBuildingName/:building (Description: wh
 router.get('/getByBuildingName/:building', locations.getByBuildingName); // => GET to /:building lists all locations at specified building
 
 debug('Adding location route: GET /getBuildingNames/:building (Description: A distinct list of all building names is retrieved)');
-router.get('/getBuildingNames', locations.getBuildingNames); //=> Get to /:building lists all building names
+router.get('/getBuildingNames', locations.getBuildingNames); //=> Get to / lists all building names
 
 debug('Locations router exported');
 module.exports = router;
