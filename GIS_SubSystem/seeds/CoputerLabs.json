@@ -1,0 +1,25 @@
+[
+{ 
+"type":"locations",
+"location_type": "Computer Lab",
+"room": "Gold",
+"LAB_NAME": "OPEN LABS",
+"building":"IT",
+"lng": -63.364,
+"lat": 235.207,
+"level": 1,
+"ground": 1  
+ },
+ 
+{ 
+"type":"locations",
+"location_type":"Computer Lab",
+"room":"Blue 3",
+"LAB_NAME": "INFORMATORIUM",
+"building":"IT",
+"lng": -40.364,
+"lat": 41.207,
+"level": 3,
+"ground": 1
+ }
+]
