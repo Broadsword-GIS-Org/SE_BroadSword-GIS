@@ -11,5 +11,8 @@ router.get('/', locations.get); // => GET to / lists all locations
 debug('Adding locations route: GET /getByBuildingName/:building (Description: where locations in a specified building are retrieved)');
 router.get('/getByBuildingName/:building', locations.getByBuildingName); // => GET to /:building lists all locations at specified building
 
+debug('Adding locations route: POST /getRoute (Description: where points from A to B are calculated and returned)');
+router.post('/getRoute', locations.getRoute); // => PUSH to /getRoute creates a route. lists all locations from A to B
+
 debug('Locations router exported');
 module.exports = router;
