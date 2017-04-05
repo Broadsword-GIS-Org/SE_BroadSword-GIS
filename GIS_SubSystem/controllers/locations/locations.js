@@ -262,3 +262,23 @@ module.exports.getRoute = function(req, res, next)
 	debug('Sending response (status: 200)');
 	res.status(200).send(response);
 };
+
+debug('Exporting method: getBuildingNames');
+module.exports.getBuildingNames = function(req, res, next) {
+    debug('Trying to find building names');
+    Loc.distinct("building" , function(err, buildings) {
+   		debug("Checking for errors");
+		if(err) res.send('No buildings found');
+		if(!buildings) res.send('No buildings found');
+
+		debug('Building JSON:API response');
+		var data = [];
+
+   		var response = {
+   			data: buildings
+   		};
+
+  		debug('Sending response (status:200)');
+   		res.status(200).send(response);
+	});
+};
