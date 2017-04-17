@@ -48,12 +48,12 @@ debug('Exporting method: Delete');
 module.exports.delete = function(req, res) {
      var location = Loc.model('Loc', Loc);
 
-     location.remove({room: req.body.room, buidling: req.body.buidling }, function(err) {
+     location.remove({room: req.body.room, building: req.body.building }, function(err) {
           if(!err){
-               res.send(req.body.buidling + " " + req.body.room + " has been removed\n");
+               res.send(req.body.building + " " + req.body.room + " has been removed\n");
           }
           else {
-               res.send("could not remove " + req.body.buidling + " " + req.body.room);
+               res.send("could not remove " + req.body.building + " " + req.body.room);
           }
      });
 }
@@ -62,7 +62,7 @@ debug('Exporting method: Update');
 module.exports.patch = function(req, res, next) {
      var location = Loc.model('Loc', Loc);
 
-     location.findOneAndUpdate({room: req.body.room, buidling: req.body.buidling}, req.body, function(err, loc) {
+     location.findOneAndUpdate({room: req.body.room, building: req.body.building}, req.body, function(err, loc) {
           debug('Checking for errors');
           if(err) return next(err);
           if(!location) return next(new Error('could not find location'));
