@@ -44,6 +44,7 @@ module.exports.create = function(req, res, next){
   });
 };
 
+
 debug('Exporting method: Delete');
 module.exports.delete = function(req, res) {
      var location = Loc.model('Loc', Loc);
@@ -65,7 +66,7 @@ module.exports.patch = function(req, res, next) {
      location.findOneAndUpdate({room: req.body.room, building: req.body.building}, req.body, function(err, loc) {
           debug('Checking for errors');
           if(err) return next(err);
-          if(!location) return next(new Error('could not find location'));
+          
 
           loc.room = req.body.room || loc.room;
           loc.building = req.body.building || loc.building;
@@ -99,8 +100,7 @@ module.exports.patch = function(req, res, next) {
           });
      });
 }
-
-
+//Done Error handling for this one
 debug('Exporting method: getById');
 module.exports.getById = function(req, res, next){
   debug('Extracting location id from params');
@@ -109,8 +109,9 @@ module.exports.getById = function(req, res, next){
   debug('Trying to find location with id: ' + id);
   Loc.findOne({'_id': id.toString()}, function(err, location){
     debug('Checking for errors');
-    if(err) return next(err);
-    if(!location) return next(new Error('Location not found.'));
+
+	if(err) return  next(err);
+	
 
     debug('Building JSON:API response');
     var response = {
