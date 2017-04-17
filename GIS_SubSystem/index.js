@@ -5,6 +5,8 @@ var errors            = require('./middleware/errors');
 var express           = require('express');
 var location          = require('./routes/locations/location');
 var locations         = require('./routes/locations/locations');
+var route          = require('./routes/routes/route');
+//var routes         = require('./routes/routes/routes');
 var mongoose          = require('mongoose');
 
 debug('Dumping config:');
@@ -32,6 +34,11 @@ debug('Adding route: location');
 app.use('/location', location);
 debug('Adding route: locations');
 app.use('/locations', locations);
+debug('Adding route: route');
+app.use('/route', route);
+//debug('Adding route: routes');
+//app.use('/routes', routes);
+
 
 debug('Adding final middleware');
 debug('Adding generic error middleware');
@@ -40,9 +47,4 @@ app.use(errors);
 debug('Creating server');
 app.listen(3000, function(){
   debug('Listening on http://localhost:3000');
-
-  //function to add location
-  //function to remove location
-
-  //function to modify location
 });

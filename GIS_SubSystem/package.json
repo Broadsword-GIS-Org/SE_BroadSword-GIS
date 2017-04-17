@@ -25,6 +25,7 @@
     "lodash": "^4.17.4",
     "mongo": "^0.1.0",
     "mongoose": "^4.9.1",
+    "node-astar": "^0.1.0",
     "nodemon": "^1.11.0"
   }
 }
