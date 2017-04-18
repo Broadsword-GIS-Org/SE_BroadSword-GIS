@@ -20,10 +20,13 @@ function Node(id, latitude, longitude) {
  * return {Double}
  */
 Node.prototype.distanceTo = function (node) {
+    const RAD = 0.000008998719243599958;
     const x = Math.abs(this.lat - node.lat);
     const y = Math.abs(this.lng - node.lng);
 
-    return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
+    var distance = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2)) / RAD;
+
+    return distance;
 }
 
 module.exports = Node

@@ -36,8 +36,6 @@ debug('Adding route: locations');
 app.use('/locations', locations);
 debug('Adding route: route');
 app.use('/route', route);
-//debug('Adding route: routes');
-//app.use('/routes', routes);
 
 
 debug('Adding final middleware');
