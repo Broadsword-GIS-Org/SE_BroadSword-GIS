@@ -100,7 +100,6 @@ module.exports.patch = function(req, res, next) {
      });
 }
 
-
 debug('Exporting method: getById');
 module.exports.getById = function(req, res, next){
   debug('Extracting location id from params');
@@ -109,8 +108,9 @@ module.exports.getById = function(req, res, next){
   debug('Trying to find location with id: ' + id);
   Loc.findOne({'_id': id.toString()}, function(err, location){
     debug('Checking for errors');
-    if(err) return next(err);
-    if(!location) return next(new Error('Location not found.'));
+
+	if(err) return  next(err);
+	
 
     debug('Building JSON:API response');
     var response = {
