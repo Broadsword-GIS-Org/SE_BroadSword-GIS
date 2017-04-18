@@ -10,6 +10,19 @@ debug('Defining error handler');
 module.exports = function(err, req, res, next){
   debug(err);
 
+   if(err.name == 'ValidationError') {
+     response = {
+      errors: [
+        {
+          status: 404, 
+          title: 'Bad request', 
+          detail: 'Fields cannot be empty'
+        }
+      ]
+     }
+     res.status(404).send(response);
+   };
+
   if(err.name == 'CastError'){
     response = {
       errors: [
