@@ -13,7 +13,7 @@ module.exports = function(err, req, res, next){
   var response = {
     errors: [
       {
-        status: 500, // This needs to be retrieved from Error Type, custom class?
+        status: 404, // This needs to be retrieved from Error Type, custom class?
         title: 'Internal server error.',
         detail: 'Please consult the console.'
       }
@@ -24,13 +24,13 @@ module.exports = function(err, req, res, next){
     response = {
       errors: [
         {
-          status: 500, // This needs to be retrieved from Error Type, custom class?
+          status: 404, // This needs to be retrieved from Error Type, custom class?
           title: 'An error occurred.',
-          detail: err.message || ''
+          detail: 'Fields cannot be empty'
         }
       ]
     }
   };
 
-  res.status(500).send(response);
+  res.status(404).send(response);
 };
