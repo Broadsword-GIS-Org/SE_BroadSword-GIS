@@ -7,34 +7,31 @@ debug('Initialising location controller');
 
 debug('Exporting method: get');
 module.exports.get = function(req, res, next){
+  debug('Extracting location ids from params');
 
-  // const n1 = Astar.Node('58e3bd7eefee5b219a565e60', -25.755393, 28.233289);
-  // const n2 = Astar.Node('58e3beddefee5b219a565e64', -25.755046, 28.229466);
+  getFields(req.query, function(locations) {
+    var locationA = locations[0];
+    var locationB = locations[1];
+    const n1 = Astar.Node(locationA.id, locationA.attributes.lat, locationA.attributes.lng);
+    const n2 = Astar.Node(locationB.id, locationB.attributes.lat, locationB.attributes.lng);
 
-  // Current DB -- Will change with merge
-  const n1 = Astar.Node('58e3bd7eefee5b219a565e60', 28.233289, -25.755393);
-  const n2 = Astar.Node('58e3beddefee5b219a565e64', 28.229466, -25.755046);
-
-  var astar = new Astar(findNeighbours);
-  var idArray = [];
-  astar.search (n1, n2, function (err, result) {
-    result.forEach(function (doc) {
-      //idArray.push(doc.id);
-      console.log(doc.lng + ', ' + doc.lat);
-      //console.log(doc.lat + ', ' + doc.lng);
+    var astar = new Astar(findNeighbours);
+    var idArray = [];
+    astar.search (n1, n2, function (err, result) {
+      result.forEach(function (doc) {
+        idArray.push(doc.id);
+      });
+      getResults(idArray, function(results) {
+        res.status(200).send(results);
+      })
     });
   });
-
-
-
-
 };
 
 const findNeighbours = function (node, next) {
     Loc.find(
         function (err, docs) {
             if (err) return next([]);
-            // console.log("entering find");
             var result = [];
             var noResults = true;
             var distance = 150;
@@ -61,45 +58,69 @@ const findNeighbours = function (node, next) {
     );
 }
 
-// module.exports.get = function(req, res, next){
-//   debug('Extracting location ids from params');
-//   var a = req.query.A;
-//   var b = req.query.B;
-//   var locationA;
-//   getFirst(a, function(err, location){
-//     if (err) {
-//       console.log(err);
-//     }
-//     locationA = location;
-//     console.log(locationA);
-//   });
-//   // var locationB;
-//   //
-// };
-//
-// function getFirst(a, callback){
-//   debug('Trying to find location with id: ' + a);
-//   Loc.findOne({'_id': a.toString()}, function(err, location){
-//     debug('Checking for errors');
-//     if(err) return next(err);
-//     if(!location) return next(new Error('Location not found.'));
-//
-//     debug('Building first location');
-//     var loc = {
-//       data: {
-//         type: 'locations',
-//         id: location.id,
-//         attributes: {
-//           name: location.name,
-//           building: location.building,
-//           lng: location.lng,
-//           lat: location.lat,
-//           level: location.level,
-//           ground: location.ground
-//         }
-//       }
-//     };
-//
-//     callback(null, loc);
-//   });
-// };
+const getFields = function (params, next) {
+  debug('Trying to find locations');
+  Loc.find(function(err, locations){
+    debug('Checking for errors');
+    if (err) next(err);
+    debug('Building JSON:API response');
+    var data = [];
+
+    _.forEach(locations, function(location){
+      if (location.id == params.A || location.id == params.B){
+        var _data = {
+          id: location.id,
+          type: 'locations',
+          attributes: {
+            location_type: location.location_type,
+  		      room: location.room,
+            building: location.building,
+            lat: location.lat,
+            lng: location.lng,
+            level: location.level,
+  		      ground: location.ground
+          }
+        };
+        data.push(_data);
+      }
+    });
+
+    next(data);
+  })
+};
+
+const getResults = function (ids, next) {
+  debug('Trying to find locations');
+  Loc.find(function(err, locations){
+    debug('Checking for errors');
+    if (err) next(err);
+    debug('Building JSON:API response');
+    var data = [];
+    _.forEach(ids, function(id) {
+      _.forEach(locations, function(location){
+        if (id == location.id) {
+          var _data = {
+            id: location.id,
+            type: 'locations',
+            attributes: {
+              location_type: location.location_type,
+    		      room: location.room,
+              building: location.building,
+              lat: location.lat,
+              lng: location.lng,
+              level: location.level,
+    		      ground: location.ground
+            }
+          };
+          data.push(_data);
+        }
+      });
+    });
+
+    var response = {
+		  data: data
+		};
+
+    next(response);
+  })
+};
