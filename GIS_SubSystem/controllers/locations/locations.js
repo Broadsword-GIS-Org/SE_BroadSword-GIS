@@ -9,11 +9,12 @@ module.exports.get = function(req, res, next){
   debug('Trying to find locations');
   Loc.find(function(err, locations){
     debug('Checking for errors');
-    if(err) return next(err);
-    if(!locations) return next(new Error('Locations not found.'));
+  
+    
 
     debug('Building JSON:API response');
     var data = [];
+	
 
     _.forEach(locations, function(location){
       var _data = {
@@ -29,16 +30,34 @@ module.exports.get = function(req, res, next){
 		  ground: location.ground
         }
       };
+	  
 
-      data.push(_data);
+     data.push(_data);
+	  
     });
-
-    var response = {
-      data: data
+	if(data[0] == null){
+		var response = {
+      errors: [
+        {
+          status: 404, 
+          title: 'Not Found',
+          detail:'The server has not found anything matching the Request-URI. i.e No locations were found'
+        }
+      ]
     };
-
-    debug('Sending response (status: 200)');
-    res.status(200).send(response);
+		
+		}
+	else
+	{
+		var response = {
+		  data: data
+		};	
+	}
+	
+	debug('Sending response (status: 200)');
+		res.status(200).send(response);
+    
+	
   });
 };
 
