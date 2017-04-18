@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sjohandup/SE_BroadSword-GIS"
+    "url": "https://github.com/Broadsword-GIS-Org/SE_BroadSword-GIS"
   },
   "keywords": [
     "Express.js"
@@ -25,6 +25,9 @@
     "lodash": "^4.17.4",
     "mongo": "^0.1.0",
     "mongoose": "^4.9.1",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "nsqjs": "^0.7.13",
+    "parse-json": "^2.2.0",
+	"needle": "^1.6.0"
   }
 }
