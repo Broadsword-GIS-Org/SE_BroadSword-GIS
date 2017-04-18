@@ -26,7 +26,7 @@ module.exports = function(err, req, res, next){
         {
           status: 404, // This needs to be retrieved from Error Type, custom class?
           title: 'An error occurred.',
-          detail: 'Fields cannot be emoty'
+          detail: 'Fields cannot be empty'
         }
       ]
     }
