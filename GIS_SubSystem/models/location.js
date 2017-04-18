@@ -20,14 +20,14 @@ var Loc = new mongoose.Schema({
   		 type: String,
   		 required: true
   }, 
-
-  lng: {
-  		 type: Number,
-  		 required: true
-  },
-
+  
   lat: {
   		 type: Number, 
+  		 required: true
+  },
+  
+  lng: {
+  		 type: Number,
   		 required: true
   },
 
