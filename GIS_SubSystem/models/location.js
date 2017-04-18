@@ -8,8 +8,8 @@ var Loc = new mongoose.Schema({
   location_type: String,
   room: String,
   building: String,
-  lat: Number,
   lng: Number,
+  lat: Number,
   level: Number,
   ground: Number
 });

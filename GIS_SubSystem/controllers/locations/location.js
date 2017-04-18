@@ -11,8 +11,8 @@ module.exports.create = function(req, res, next){
     location_type: req.body.location_type,
 	room: req.body.room,
     building: req.body.building,
-    lat: req.body.lat,
     lng: req.body.lng,
+    lat: req.body.lat,
     level: req.body.level,
 	ground: req.body.ground
   });
@@ -31,8 +31,8 @@ module.exports.create = function(req, res, next){
           location_type: location.location_type,
 		  room: location.room,
           building: location.building,
-          lat: location.lat,
           lng: location.lng,
+          lat: location.lat,
           level: location.level,
 		  ground: location.ground
         }
@@ -48,12 +48,12 @@ debug('Exporting method: Delete');
 module.exports.delete = function(req, res) {
      var location = Loc.model('Loc', Loc);
 
-     location.remove({room: req.body.room, building: req.body.building }, function(err) {
+     location.remove({name: req.body.name}, function(err) {
           if(!err){
-               res.send(req.body.building + " " + req.body.room + " has been removed\n");
+               res.send(req.body.name + " has been removed\n");
           }
           else {
-               res.send("could not remove " + req.body.building + " " + req.body.room);
+               res.send("could not remove " + req.body.name);
           }
      });
 }
@@ -62,15 +62,15 @@ debug('Exporting method: Update');
 module.exports.patch = function(req, res, next) {
      var location = Loc.model('Loc', Loc);
 
-     location.findOneAndUpdate({room: req.body.room, building: req.body.building}, req.body, function(err, loc) {
+     location.findOneAndUpdate({name : req.body.name}, req.body, function(err, loc) {
           debug('Checking for errors');
           if(err) return next(err);
           if(!location) return next(new Error('could not find location'));
 
-          loc.room = req.body.room || loc.room;
+          loc.name = req.body.name || loc.name;
           loc.building = req.body.building || loc.building;
-          loc.lat = req.body.lat || loc.lat;
           loc.lng = req.body.lng || loc.lng;
+          loc.lat = req.body.lat || loc.lat;
           loc.level = req.body.level || loc.level;
 		  loc.ground = req.body.ground || loc.ground;
 
@@ -84,10 +84,10 @@ module.exports.patch = function(req, res, next) {
                    type: 'locations',
                    id: loc.id,
                    attributes: {
-                     room: loc.room,
+                     name: loc.name,
                      building: loc.building,
-                     lat: loc.lat,
                      lng: loc.lng,
+                     lat: loc.lat,
                      level: loc.level,
 					 ground: loc.ground
                    }
@@ -99,7 +99,6 @@ module.exports.patch = function(req, res, next) {
           });
      });
 }
-
 
 debug('Exporting method: getById');
 module.exports.getById = function(req, res, next){
@@ -118,10 +117,10 @@ module.exports.getById = function(req, res, next){
         type: 'locations',
         id: location.id,
         attributes: {
-          room: location.room,
+          name: location.name,
           building: location.building,
-          lat: location.lat,
           lng: location.lng,
+          lat: location.lat,
           level: location.level,
 		  ground: location.ground
         }
