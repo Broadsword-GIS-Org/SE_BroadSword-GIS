@@ -1,0 +1,97 @@
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{float}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+            {-2.5ex\@plus -1ex \@minus -.25ex}%
+            {1.25ex \@plus .25ex}%
+            {\normalfont\normalsize\bfseries}}
+\makeatother
+\setcounter{secnumdepth}{4} % how many sectioning levels to assign numbers to
+\setcounter{tocdepth}{4}    % how many sectioning levels to show in ToC
+\begin{document}
+		\begin{figure}[t]
+			\centering
+			\includegraphics[width=350px]{UP_Logo.PNG}
+		\end{figure}
+	
+			\title{COS 301 Software Engineering: BroadSword-GIS (NavUp MODULE) DOCUMENTATION}
+\maketitle
+				
+		\begin{flushright} \large
+			Mankgwanyane Tlaka    - 14351872\\
+			Johan	     du Plooy -	12070794\\
+			Dimpho	     Mahoko   -	15175091\\
+			Bernhard	 Schuld	  - 10297902\\
+			Kamogelo	 Tsipa	  - 13010931\\
+			Hendrik	van  der Mewe - 15101283\\
+		\end{flushright}
+		
+		
+		
+		
+		GitHub Repository: \href{https://github.com/Broadsword-GIS-Org/SE_BroadSword-GIS}\\
+		\url{https://github.com/Broadsword-GIS-Org/SE_BroadSword-GIS}
+	
+
+\clearpage
+\tableofcontents
+\clearpage
+
+\section{Scope}
+Services to gather, maintain, persist and provide information related to fixed
+spatial information needed for NavUP. It is about the creation and maintenance
+ of a GIS Map of the campus and persisting information that can be
+applied to determine the location of a device based on WiFi signal strengths
+and other available sources of GIS information.
+This module provide services to search for locations such as landmarks,
+buildings as well as venues such as landmarks, lecture halls, labs, etc.
+
+\section{Use Cases}
+	\subsection{Actors}
+		\begin{itemize}
+ 			\item Admin: CRUD any kind of singular element Import: Create a batch of elements via upload of a \textit{Json} File       format
+  			\item User: Get longitude,latitude coordinates and level number of a named location
+		\end{itemize}
+		
+	\subsection{Use Case Diagram}
+		\begin{figure}[H]
+			\includegraphics[width=150mm]{GIS_Subsystem_Use_Case_Diagram_edit_by_kgothatso.png}
+		\end{figure}
+	
+\section{Service Contracts}
+	
+		\begin{itemize}
+ 			\item \textbf{module.exports.get = function(req, res, next)} : Get all location elements in the system, return A Json  Array
+  			\item  \textbf{module.exports.getByBuildingName} = function(req, res, next) : Get all locations in the given building, Return a Json Array
+  			\item \textbf{module.exports.getRoute = function(req, res, next)} : Get route between two points, return a Json array
+  			\item \textbf{module.exports.create = function(req, res, next)} : Create a single location element, Persist in Database
+  			\item \textbf{module.exports.delete = function(req, res)} : Delete a single location element from the database
+  			\item \textbf{module.exports.patch = function(req, res, next)} : Update a single location element, persist changes in database
+  			\item \textbf{module.exports.getById = function(req, res, next)}: Get a single location Element by ID, return Json object
+			\item \textbf{module.exports.getBuildingNames = function(req, res, next)} : Get all buildings, return an array of building names
+		\end{itemize}
+\section{Tools}
+	\subsection{Mean Stack}
+		Every in this Module is build on top of the mean stack, in particular express. mean stack is chosen for its performance 
+		. it allows for everything to be codded in JavaScript which saves time . Mean stack also support the MVC architecture.
+	\subsection{Mongo DB}
+		Mongo db allows for fast retrieval of large amount of data. since it is a non-relational database it servers a good 				performance for NavUp GIS system.
+	\subsection{Mongoose Schema}
+		Everything in Mongoose starts with a Schema. Each schema maps to a MongoDB collection and defines the shape of the 		documents within that collection. 
+		This works well since there is a need to exchange data in a standard format in between modules of NavUP.
+	\subsection{Seed npm-packgae}
+		This seed package is used to automatically populate the database when the server starts with location elements from a Json file format
+	\subsection{NSQ}
+		NSQ is a library wich is used to communicate with other NavUp modules in real time
+
+\end{document}
