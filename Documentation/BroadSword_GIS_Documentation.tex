@@ -54,13 +54,18 @@ spatial information needed for NavUP. It is about the creation and maintenance
 applied to determine the location of a device based on WiFi signal strengths
 and other available sources of GIS information.
 This module provide services to search for locations such as landmarks,
-buildings as well as venues such as landmarks, lecture halls, labs, etc.
+buildings as well as venues such as landmarks, lecture halls, labs and any location added by an administrator.
 
 \section{Use Cases}
 	\subsection{Actors}
 		\begin{itemize}
- 			\item Admin: CRUD any kind of singular element Import: Create a batch of elements via upload of a \textit{Json} File       format
-  			\item User: Get longitude,latitude coordinates and level number of a named location
+			\item Guest User: Get longitude,latitude coordinates and level number of a named location
+			
+			\item User: All Guest User functionality along with the ability to save frequent locations and link with timetable
+			
+ 			\item Admin: All User fucntionality and CRUD any kind of singular element Import: Create a batch of elements via upload of a \textit{Json} File       format
+  			
+				
 		\end{itemize}
 		
 	\subsection{Use Case Diagram}
