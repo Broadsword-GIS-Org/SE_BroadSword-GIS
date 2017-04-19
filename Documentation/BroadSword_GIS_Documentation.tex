@@ -24,7 +24,7 @@
 			\includegraphics[width=350px]{UP_Logo.PNG}
 		\end{figure}
 	
-			\title{COS 301 Software Engineering: BroadSword-GIS (NavUp MODULE) DOCUMENTATION}
+			\title{COS 301 Software Engineering: BroadSword-GIS (NavUP MODULE) DOCUMENTATION}
 \maketitle
 				
 		\begin{flushright} \large
@@ -54,16 +54,17 @@ spatial information needed for NavUP. It is about the creation and maintenance
 applied to determine the location of a device based on WiFi signal strengths
 and other available sources of GIS information.
 This module provide services to search for locations such as landmarks,
-buildings as well as venues such as landmarks, lecture halls, labs and any location added by an administrator.
+buildings, lecture halls, labs and any location added by an administrator.
 
 \section{Use Cases}
 	\subsection{Actors}
 		\begin{itemize}
-			\item Guest User: Get longitude,latitude coordinates and level number of a named location
+			\item Guest User: Get a location by it's name, ID or coordinates
 			
 			\item User: All Guest User functionality along with the ability to save frequent locations and link with timetable
 			
- 			\item Admin: All User fucntionality and CRUD any kind of singular element Import: Create a batch of elements via upload of a \textit{Json} File       format
+ 			\item Admin: All User functionality and CRUD any kind of singular element. 
+			Import: Create a batch of elements via upload of a \textit{Json} File format
   			
 				
 		\end{itemize}
@@ -78,7 +79,7 @@ buildings as well as venues such as landmarks, lecture halls, labs and any locat
 		\begin{itemize}
  			\item \textbf{module.exports.get = function(req, res, next)} : Get all location elements in the system, return A Json  Array
   			\item  \textbf{module.exports.getByBuildingName} = function(req, res, next) : Get all locations in the given building, Return a Json Array
-  			\item \textbf{module.exports.getRoute = function(req, res, next)} : Get route between two points, return a Json array
+  			\item \textbf{module.exports.getRoute = function(req, res, next)} : Get the route between two points, return a Json array
   			\item \textbf{module.exports.create = function(req, res, next)} : Create a single location element, Persist in Database
   			\item \textbf{module.exports.delete = function(req, res)} : Delete a single location element from the database
   			\item \textbf{module.exports.patch = function(req, res, next)} : Update a single location element, persist changes in database
@@ -97,14 +98,18 @@ buildings as well as venues such as landmarks, lecture halls, labs and any locat
 	\subsection{Seed npm-packgae}
 		This seed package is used to automatically populate the database when the server starts with location elements from a Json file format
 	\subsection{NSQ}
-		NSQ is a library wich is used to communicate with other NavUp modules in real time
+		NSQ is a library that is used to communicate with other NavUP modules in real time
 		
 \section{Contribution}
-	\item Issue Tracker: https://github.com/Broadsword-GIS-Org/SE_BroadSword-GIS/issues/
-	\item Source Code : https://github.com/Broadsword-GIS-Org/SE_BroadSword-GIS/tree/master/GIS_SubSystem
+	\begin{itemize}
+		\item Issue Tracker: https://github.com/Broadsword-GIS-Org/SE_BroadSword-GIS/issues/
+		\item Source Code : https://github.com/Broadsword-GIS-Org/SE_BroadSword-GIS/tree/master/GIS_SubSystem
+	\end{itemize}
 	
 \section{Support}
-	\item If you are having issues please let us know
-		mailing list: 
+	\begin{itemize}
+		\item If you are having issues please let us know
+		Mailing list: 
+	\end{itemize}
 
 \end{document}
