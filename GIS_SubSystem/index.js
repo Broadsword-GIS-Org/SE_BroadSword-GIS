@@ -67,7 +67,7 @@ reader.on('message', function(msg) {
 	//var msgStr = msg.body.toString();
 	var request = strToJson(msg.body.toString());
 	
-	if(request.dest != 'gis') {
+	if(request.dest != 'Gis') {
 		msg.finish();
 		return;
 	}
@@ -218,15 +218,21 @@ respond = function(src, msg) {
 	
 	writer.on('ready', function () {
 		//var content = strToJson(msg);
+		
+		var queryType = "response";
+		if(src == "Navigation") {
+			queryType = "gisRecieveRoutes";
+		}
+		
 		var response = {
-			"src"  : "gis",
+			"src"  : "Gis",
 			"dest" : src,
 			"msgType" : "response",
-			"queryType" : "response",
+			"queryType" : queryType,
 			"content" : msg
 		}
 		
-		writer.publish(src, response, function (err) {
+		writer.publish(src.toLowerCase(), response, function (err) {
 			if(err) { return console.error(err.message); }
 			
 			//console.log('Message sent successfully');
