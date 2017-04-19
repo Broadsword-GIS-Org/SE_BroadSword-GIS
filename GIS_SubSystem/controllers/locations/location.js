@@ -11,8 +11,8 @@ module.exports.create = function(req, res, next){
     location_type: req.body.location_type,
 	room: req.body.room,
     building: req.body.building,
-    lng: req.body.lng,
     lat: req.body.lat,
+    lng: req.body.lng,
     level: req.body.level,
 	ground: req.body.ground
   });
@@ -31,8 +31,8 @@ module.exports.create = function(req, res, next){
           location_type: location.location_type,
 		  room: location.room,
           building: location.building,
-          lng: location.lng,
           lat: location.lat,
+          lng: location.lng,
           level: location.level,
 		  ground: location.ground
         }
@@ -69,8 +69,8 @@ module.exports.patch = function(req, res, next) {
 
           loc.name = req.body.name || loc.name;
           loc.building = req.body.building || loc.building;
-          loc.lng = req.body.lng || loc.lng;
           loc.lat = req.body.lat || loc.lat;
+          loc.lng = req.body.lng || loc.lng;
           loc.level = req.body.level || loc.level;
 		  loc.ground = req.body.ground || loc.ground;
 
@@ -86,8 +86,8 @@ module.exports.patch = function(req, res, next) {
                    attributes: {
                      name: loc.name,
                      building: loc.building,
-                     lng: loc.lng,
                      lat: loc.lat,
+                     lng: loc.lng,
                      level: loc.level,
 					 ground: loc.ground
                    }
@@ -108,8 +108,9 @@ module.exports.getById = function(req, res, next){
   debug('Trying to find location with id: ' + id);
   Loc.findOne({'_id': id.toString()}, function(err, location){
     debug('Checking for errors');
-    if(err) return next(err);
-    if(!location) return next(new Error('Location not found.'));
+
+	if(err) return  next(err);
+	
 
     debug('Building JSON:API response');
     var response = {
@@ -119,8 +120,8 @@ module.exports.getById = function(req, res, next){
         attributes: {
           name: location.name,
           building: location.building,
-          lng: location.lng,
           lat: location.lat,
+          lng: location.lng,
           level: location.level,
 		  ground: location.ground
         }

@@ -9,11 +9,12 @@ module.exports.get = function(req, res, next){
   debug('Trying to find locations');
   Loc.find(function(err, locations){
     debug('Checking for errors');
-    if(err) return next(err);
-    if(!locations) return next(new Error('Locations not found.'));
+  
+    
 
     debug('Building JSON:API response');
     var data = [];
+	
 
     _.forEach(locations, function(location){
       var _data = {
@@ -23,22 +24,40 @@ module.exports.get = function(req, res, next){
           location_type: location.location_type,
 		  room: location.room,
           building: location.building,
-          lng: location.lng,
           lat: location.lat,
+          lng: location.lng,
           level: location.level,
 		  ground: location.ground
         }
       };
+	  
 
-      data.push(_data);
+     data.push(_data);
+	  
     });
-
-    var response = {
-      data: data
+	if(data[0] == null){
+		var response = {
+      errors: [
+        {
+          status: 404, 
+          title: 'Not Found',
+          detail:'The server has not found anything matching the Request-URI. i.e No locations were found'
+        }
+      ]
     };
-
-    debug('Sending response (status: 200)');
-    res.status(200).send(response);
+		
+		}
+	else
+	{
+		var response = {
+		  data: data
+		};	
+	}
+	
+	debug('Sending response (status: 200)');
+		res.status(200).send(response);
+    
+	
   });
 };
 
@@ -64,8 +83,8 @@ module.exports.getByBuildingName = function(req, res, next) {
 					location_type: location.location_type,
 					room: location.room,
 					building: location.building,
-					lng: location.lng,
 					lat: location.lat,
+					lng: location.lng,
 					level: location.level,
 					ground: location.ground
 				}
@@ -101,8 +120,8 @@ module.exports.getRoute = function(req, res, next)
 			location_type: "Venue",
 			room: "2-27",
 			building: "IT",
-			lng: -25.755990,
-			lat: 28.233137,
+			lat: -25.755990,
+			lng: 28.233137,
 			level: 2,
 			ground: 2
 		}
@@ -117,8 +136,8 @@ module.exports.getRoute = function(req, res, next)
 			location_type: "Entrance",
 			room: "N\/A",
 			building: "IT",
-			lng: -25.755869,
-			lat: 28.233144,
+			lat: -25.755869,
+			lng: 28.233144,
 			level: 2,
 			ground: 2
 		}
@@ -133,8 +152,8 @@ module.exports.getRoute = function(req, res, next)
 			location_type: "Point",
 			room: "N\/A",
 			building: "N\/A",
-			lng: -25.755836,
-			lat: 28.233162,
+			lat: -25.755836,
+			lng: 28.233162,
 			level: 0,
 			ground: 0
 		}
@@ -149,8 +168,8 @@ module.exports.getRoute = function(req, res, next)
 			location_type: "Point",
 			room: "N\/A",
 			building: "N\/A",
-			lng: -25.755811,
-			lat: 28.233266,
+			lat: -25.755811,
+			lng: 28.233266,
 			level: 0,
 			ground: 0
 		}
@@ -165,8 +184,8 @@ module.exports.getRoute = function(req, res, next)
 			location_type: "Point",
 			room: "N\/A",
 			building: "N\/A",
-			lng: -25.755712,
-			lat: 28.233275,
+			lat: -25.755712,
+			lng: 28.233275,
 			level: 0,
 			ground: 0
 		}
@@ -181,8 +200,8 @@ module.exports.getRoute = function(req, res, next)
 			location_type: "Point",
 			room: "N\/A",
 			building: "N\/A",
-			lng: -25.755623,
-			lat: 28.233404,
+			lat: -25.755623,
+			lng: 28.233404,
 			level: 0,
 			ground: 0
 		}
@@ -197,8 +216,8 @@ module.exports.getRoute = function(req, res, next)
 			location_type: "Point",
 			room: "N\/A",
 			building: "N\/A",
-			lng: -25.755567,
-			lat: 28.233193,
+			lat: -25.755567,
+			lng: 28.233193,
 			level: 0,
 			ground: 0
 		}
@@ -213,8 +232,8 @@ module.exports.getRoute = function(req, res, next)
 			location_type: "Point",
 			room: "N\/A",
 			building: "N\/A",
-			lng: -25.755528,
-			lat: 28.233166,
+			lat: -25.755528,
+			lng: 28.233166,
 			level: 0,
 			ground: 0
 		}
@@ -229,8 +248,8 @@ module.exports.getRoute = function(req, res, next)
 			location_type: "Point",
 			room: "N\/A",
 			building: "N\/A",
-			lng: -25.755358,
-			lat: 28.233218,
+			lat: -25.755358,
+			lng: 28.233218,
 			level: 0,
 			ground: 0
 		}
@@ -245,8 +264,8 @@ module.exports.getRoute = function(req, res, next)
 			location_type: "Entrance",
 			room: "N\/A",
 			building: "EMB",
-			lng: -25.755391,
-			lat: 28.233297,
+			lat: -25.755391,
+			lng: 28.233297,
 			level: 2,
 			ground: 2
 		}
