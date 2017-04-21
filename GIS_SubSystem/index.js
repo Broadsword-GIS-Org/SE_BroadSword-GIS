@@ -51,7 +51,7 @@ app.listen(3000, function(){
 });
 
 
-
+/*
 //NSQ
 debug('Setting up NSQ Bridge');
 
@@ -240,3 +240,4 @@ respond = function(src, msg) {
 		});
 	});
 }
+*/
