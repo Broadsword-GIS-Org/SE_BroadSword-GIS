@@ -17,5 +17,8 @@ router.delete('/', location.delete); // => DELETE to /delete a location.
 debug('Updating location route: PATCH / (Description: where location is updated)');
 router.patch('/', location.patch); // => PATCH to /update a location
 
+debug('Adding location route: GET / (Description: where location is retrieved via name)');
+router.get('/:name', location.getByName); // => GET to /:name
+
 debug('Location router exported');
 module.exports = router;
