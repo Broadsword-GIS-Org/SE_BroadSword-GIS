@@ -1,0 +1,18 @@
+Insert Node JS writeup here....
+
+Node.js is not a database but databases such as MongoDB and PostGreSQL offer Node.js drivers that can manipulate their databases. For example.
+
+Say we have a MongoDB. We can then connect to the DB using our driver.
+//variable to access and retrieve the database
+var MongoClient = require('mongodb').MongoClient;
+
+// Connect to the db
+MongoClient.connect("mongodb://localhost:27017/exampleDb", function(err, db) {
+  if(!err) {
+    console.log("We are connected");
+  }
+});
+
+If successful "We are connected" should be printed
+
+CRUD, Searching, Querying the DB and many other database manipulations are also offered with the driver. So basically we can use it in conjunction with our chosen database.
