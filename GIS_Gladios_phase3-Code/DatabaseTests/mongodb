@@ -1,0 +1,39 @@
+put mongoDB writeup here....
+
+//after downloading Node.js install the driver
+npm install mongodb
+
+
+We can now manipulate our MongoDB using our Node.js driver(CRUD, Search, Query etc)
+
+Pros and Cons:
+
+MongoDB is document-based NoSQL database therefore:
+
+
+Pros:
+Flexible Data Model. Unlike relational databases, NoSQL databases easily store and combine any type of data, both structured and unstructured. You can also dynamically update the schema to evolve with changing requirements and without any interruption or downtime to your application.
+
+Elastic Scalability. NoSQL databases scale out on low cost, commodity hardware, allowing for almost unlimited growth.
+
+High Performance. NoSQL databases are built for great performance, measured in terms of both throughput and latency.
+
+Cons:
+
+No Joins
+In MongoDB there exists no possibility for joins like in a relational database. This means that when you need this type of functionality, you need to make multiple queries and join the data manually within your code (which can lead to slow, ugly code, and reduced flexibility when the structure changes).
+
+Memory Usage
+MongoDB has the natural tendency to use up more memory because it has to store the key names within each document. This is due to the fact that the data structure is not necessarily consistent amongst the data objects.
+
+Additionally you're stuck with duplicate data since there is no possibility for joins, or slow queries due to the need to perform the join within your code. To solve the problem of duplicate data in Mongo, you can store references to objects (i.e. BSON ids), however if you find yourself doing this it indicates that the data is actually "relational", and perhaps a relational database suits your needs better.
+
+Concurrency Issues
+When you perform a write operation in MongoDB, it creates a lock on the entire database, not just the affected entries, and not just for a particular connection. This lock blocks not only other write operations, but also read operations. Also there's no multi-document transactions meaning consistency is not gauranteed in some cases.
+
+In terms of concurrency...
+
+"MongoDB allows multiple clients to read and write the same data. In order to ensure consistency, it uses locking and other concurrency control measures to prevent multiple clients from modifying the same piece of data simultaneously. Together, these mechanisms guarantee that all writes to a single document occur either in full or not at all and that clients never see an inconsistent view of the data."
+
+
+This I got from https://docs.mongodb.com/manual/faq/concurrency/ which speaks of the different locking operations, which operations lock the database(for how long), operations that lock multiple databases, administrative commands and theirs locks to name a few.

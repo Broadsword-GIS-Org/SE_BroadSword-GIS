@@ -1,0 +1,97 @@
+=======
+/* Characteristics favoring PostgreSQL Database:
+
+   -Close adherence to the SQL standard
+   -Supports a procedural language (PL/pgSQL, PL/Tcl, PL/Perl, PL/Python) to allow for processing within the database architecture
+   -Extensive geospatial support (PostgreSQL is a leader in mapping and geospatial applications)*/
+
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.sql.ResultSet;
+
+public class PostgreSQLJDBC{
+	Connection c = null;
+   	Statement stmt = null;
+
+
+   	public PostgreSQLJDBC(){
+      	try{
+         	//setup database NavUPdb through port 5432 using user name 'postgres' and password '1234'
+         	c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/NavUPdb", "postgres", "1234");
+         	// do not let the connection commit queries automatically
+         	c.setAutoCommit(false);
+      	}
+      	catch (Exception e){
+         	e.printStackTrace();
+         	System.err.println(e.getClass().getName()+": "+e.getMessage());
+         	System.exit(0);
+      	}
+      	System.out.println("Opened database successfully");
+   	}
+  
+    //We can have one function called 'public Boolean submitQuery(String sql)' that can handle any query request but
+    // we need seperate functions because when for example inserting, we need to ensure that the person has the rights 
+    //to insert(admin rights) before something new can be added.
+  
+   	public Boolean insert(String sql){
+   		/* String 'sql' should be sent like this:
+        		String sql = "INSERT INTO LOCATIONS (ID,NAME,COORDINATES) " 
+        		+ "VALUES (1, 'IT 4-4', '1,14');";
+        		myDatabase.insert(sql) */
+        try{
+        	stmt = c.createStatement();
+	        stmt.executeUpdate(sql);
+	        stmt.close();
+	        c.commit();
+	        System.out.println("Inserted record successfully");
+	        return true; 
+        }
+        catch(Exception e){
+        	System.err.println(e.getClass().getName()+": "+e.getMessage());
+         	System.exit(0);
+         	return false;
+        }
+   		
+   	}
+
+   	public Boolean update(String sql){
+   		/*  String 'sql' should be sent like this:
+   				String sql = "UPDATE LOCATIONS set NAME='IT 4-1' WHERE ID=1;";*/
+   		try{
+	   		stmt = c.createStatement();
+	        stmt.executeUpdate(sql);
+	        stmt.close();
+	        c.commit();
+	        System.out.println("Updated record successfully");
+	        return true;
+	    }
+	    catch(Exception e){
+        	System.err.println(e.getClass().getName()+": "+e.getMessage());
+         	System.exit(0);
+         	return false;
+        }
+   	}
+
+   	public Boolean delete(String sql){
+   		/*  String 'sql' should be sent like this:
+   				String sql = "DELETE FROM LOCATIONS WHERE COORDINATES='1,14';"*/
+   		try{
+        	stmt = c.createStatement();
+	        stmt.executeUpdate(sql);
+	        stmt.close();
+	        c.commit();
+	        System.out.println("Deleted record successfully");
+	        return true; 
+        }
+        catch(Exception e){
+        	System.err.println(e.getClass().getName()+": "+e.getMessage());
+         	System.exit(0);
+         	return false;
+        }
+
+   	}
+
+}
+>>>>>>> 8e8747322126a7347da116d31729497e74c9135a

@@ -14,3 +14,230 @@ hs_err_pid*
 # Node
 /GIS_SubSystem/node_modules
 /GIS_SubSystem/npm-*.log
+
+
+# Created by https://www.gitignore.io/api/latex
+
+### LaTeX ###
+## Core latex/pdflatex auxiliary files:
+/Phase4_Testing_Report/*.aux
+/Phase4_Testing_Report/*.lof
+/Phase4_Testing_Report/*.log
+/Phase4_Testing_Report/*.lot
+/Phase4_Testing_Report/*.fls
+/Phase4_Testing_Report/*.out
+/Phase4_Testing_Report/*.toc
+/Phase4_Testing_Report/*.fmt
+/Phase4_Testing_Report/*.fot
+/Phase4_Testing_Report/*.cb
+/Phase4_Testing_Report/*.cb2
+
+## Intermediate documents:
+/Phase4_Testing_Report/*.dvi
+/Phase4_Testing_Report/*-converted-to.*
+# these rules might exclude image files for figures etc.
+# *.ps
+# *.eps
+# *.pdf
+
+## Generated if empty string is given at "Please type another file name for output:"
+/Phase4_Testing_Report/.pdf
+
+## Bibliography auxiliary files (bibtex/biblatex/biber):
+/Phase4_Testing_Report/*.bbl
+/Phase4_Testing_Report/*.bcf
+/Phase4_Testing_Report/*.blg
+/Phase4_Testing_Report/*-blx.aux
+/Phase4_Testing_Report/*-blx.bib
+/Phase4_Testing_Report/*.run.xml
+
+## Build tool auxiliary files:
+/Phase4_Testing_Report/*.fdb_latexmk
+/Phase4_Testing_Report/*.synctex
+/Phase4_Testing_Report/*.synctex(busy)
+/Phase4_Testing_Report/*.synctex.gz
+/Phase4_Testing_Report/*.synctex.gz(busy)
+/Phase4_Testing_Report/*.pdfsync
+
+## Auxiliary and intermediate files from other packages:
+# algorithms
+/Phase4_Testing_Report/*.alg
+/Phase4_Testing_Report/*.loa
+
+# achemso
+/Phase4_Testing_Report/acs-*.bib
+
+# amsthm
+/Phase4_Testing_Report/*.thm
+
+# beamer
+/Phase4_Testing_Report/*.nav
+/Phase4_Testing_Report/*.pre
+/Phase4_Testing_Report/*.snm
+/Phase4_Testing_Report/*.vrb
+
+# changes
+/Phase4_Testing_Report/*.soc
+
+# cprotect
+/Phase4_Testing_Report/*.cpt
+
+# elsarticle (documentclass of Elsevier journals)
+/Phase4_Testing_Report/*.spl
+
+# endnotes
+/Phase4_Testing_Report/*.ent
+
+# fixme
+/Phase4_Testing_Report/*.lox
+
+# feynmf/feynmp
+/Phase4_Testing_Report/*.mf
+/Phase4_Testing_Report/*.mp
+/Phase4_Testing_Report/*.t[1-9]
+/Phase4_Testing_Report/*.t[1-9][0-9]
+/Phase4_Testing_Report/*.tfm
+
+#(r)(e)ledmac/(r)(e)ledpar
+*.end/Phase4_Testing_Report/
+/Phase4_Testing_Report/*.?end
+/Phase4_Testing_Report/*.[1-9]
+/Phase4_Testing_Report/*.[1-9][0-9]
+/Phase4_Testing_Report/*.[1-9][0-9][0-9]
+/Phase4_Testing_Report/*.[1-9]R
+/Phase4_Testing_Report/*.[1-9][0-9]R
+/Phase4_Testing_Report/*.[1-9][0-9][0-9]R
+/Phase4_Testing_Report/*.eledsec[1-9]
+/Phase4_Testing_Report/*.eledsec[1-9]R
+/Phase4_Testing_Report/*.eledsec[1-9][0-9]
+/Phase4_Testing_Report/*.eledsec[1-9][0-9]R
+/Phase4_Testing_Report/*.eledsec[1-9][0-9][0-9]
+/Phase4_Testing_Report/*.eledsec[1-9][0-9][0-9]R
+
+# glossaries
+/Phase4_Testing_Report/*.acn
+/Phase4_Testing_Report/*.acr
+/Phase4_Testing_Report/*.glg
+/Phase4_Testing_Report/*.glo
+/Phase4_Testing_Report/*.gls
+/Phase4_Testing_Report/*.glsdefs
+
+# gnuplottex
+/Phase4_Testing_Report/*-gnuplottex-*
+
+# gregoriotex
+/Phase4_Testing_Report/*.gaux
+/Phase4_Testing_Report/*.gtex
+
+# hyperref
+/Phase4_Testing_Report/*.brf
+
+# knitr
+/Phase4_Testing_Report/*-concordance.tex
+# TODO Comment the next line if you want to keep your tikz graphics files
+/Phase4_Testing_Report/*.tikz
+/Phase4_Testing_Report/*-tikzDictionary
+
+# listings
+/Phase4_Testing_Report/*.lol
+
+# makeidx
+/Phase4_Testing_Report/*.idx
+/Phase4_Testing_Report/*.ilg
+/Phase4_Testing_Report/*.ind
+/Phase4_Testing_Report/*.ist
+
+# minitoc
+/Phase4_Testing_Report/*.maf
+/Phase4_Testing_Report/*.mlf
+/Phase4_Testing_Report/*.mlt
+/Phase4_Testing_Report/*.mtc[0-9]*
+/Phase4_Testing_Report/*.slf[0-9]*
+/Phase4_Testing_Report/*.slt[0-9]*
+/Phase4_Testing_Report/*.stc[0-9]*
+
+# minted
+/Phase4_Testing_Report/_minted*
+/Phase4_Testing_Report/*.pyg
+
+# morewrites
+/Phase4_Testing_Report/*.mw
+
+# nomencl
+/Phase4_Testing_Report/*.nlo
+
+# pax
+/Phase4_Testing_Report/*.pax
+
+# pdfpcnotes
+/Phase4_Testing_Report/*.pdfpc
+
+# sagetex
+/Phase4_Testing_Report/*.sagetex.sage
+/Phase4_Testing_Report/*.sagetex.py
+/Phase4_Testing_Report/*.sagetex.scmd
+
+# scrwfile
+/Phase4_Testing_Report/*.wrt
+
+# sympy
+/Phase4_Testing_Report/*.sout
+/Phase4_Testing_Report/*.sympy
+/Phase4_Testing_Report/sympy-plots-for-*.tex/
+
+# pdfcomment
+/Phase4_Testing_Report/*.upa
+/Phase4_Testing_Report/*.upb
+
+# pythontex
+/Phase4_Testing_Report/*.pytxcode
+/Phase4_Testing_Report/pythontex-files-*/
+
+# thmtools
+/Phase4_Testing_Report/*.loe
+
+# TikZ & PGF
+/Phase4_Testing_Report/*.dpth
+/Phase4_Testing_Report/*.md5
+/Phase4_Testing_Report/*.auxlock
+
+# todonotes
+/Phase4_Testing_Report/*.tdo
+
+# easy-todo
+/Phase4_Testing_Report/*.lod
+
+# xindy
+/Phase4_Testing_Report/*.xdy
+
+# xypic precompiled matrices
+/Phase4_Testing_Report/*.xyc
+
+# endfloat
+/Phase4_Testing_Report/*.ttt
+/Phase4_Testing_Report/*.fff
+
+# Latexian
+/Phase4_Testing_Report/TSWLatexianTemp*
+
+## Editors:
+# WinEdt
+/Phase4_Testing_Report/*.bak
+/Phase4_Testing_Report/*.sav
+
+# Texpad
+/Phase4_Testing_Report/.texpadtmp
+
+# Kile
+/Phase4_Testing_Report/*.backup
+
+# KBibTeX
+/Phase4_Testing_Report/*~[0-9]*
+
+# auto folder when using emacs and auctex
+/Phase4_Testing_Report/auto/*
+
+# expex forward references with \gathertags
+/Phase4_Testing_Report/*-tags.tex
+
+# End of https://www.gitignore.io/api/latex
