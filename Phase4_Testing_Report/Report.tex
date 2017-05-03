@@ -48,12 +48,30 @@
 	
 	
 
-\section{Test Model}
-	\subsection
+\section{API Testing}
+	\subsection{Type of test to be applied: Black-Box Testing}
+		\subsection{Reason for choosen Testing Method }
+		We choose White-Box Testing since GIS is a modulle to the NavUP software. this allows us to examine the functionality of 
+		the Gladios GIS modulle
+	\Subsection{Test Cases}
+	 
+		 \begin{table}[]
+		\centering
+		\caption{Process of Testing Service Contracts}
+		\label{my-label}
+		\begin{tabular}{llll}
+		\textbf{Test Case Signature}                                                                                    & 			\textbf{Description} & \textbf{Mark out of 10} & \textbf{comment} \\
+		public ArrayList getAllBuildings();                                                                             &                      &                         &                  \\
+		public String getBuilding(Double lat, Double lon);                                                              &                      &                         &                  \\
+		ArrayList getLectureHall(String building);                                                                      &                      &                         &                  \\
+		public ArrayList getLectureCoordinates(String room);                                                            &                      &                         &                  \\
+		public ArrayList getBuildingCoordinates(String building);                                                       &                      &                         &                  \\
+		public ArrayList getBuildingInRadius(double mLat, double mLon, double radius);                                  &                      &                         &                  \\
+		public void insertBuilding(String name, String description, String geometry, String coordinates, String table); &                      &                         &                 
+		\end{tabular}
+		\end{table}
 
-% Create a list of service contracts tested. Evaluate each of the use case by giving a mark out of 10 and writing a comment to justify the mark
-\section{Service Contracts Tested}
-Insert Text Here.
+
 
 % Create a list of non-functional requirements tested, then evaluate each of these giving a mark out of 10 and writing comments to justify the mark.
 \section{Non-Functional Requirements Tested}
