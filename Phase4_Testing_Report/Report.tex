@@ -82,34 +82,36 @@
 	\end{itemize}
 		
 		
-		\begin{table}[h!]
-		
+		\begin{table}[h!]	
+			\newlength{\longline}
+			\settowidth{\longline}{This function returns a}
 			\centering
 			\caption{Test cases }
 			\label{tab:table1}
-			\vline
-			\begin{tabular}{cccc}
+			\begin{tabular}{|c|c|c|c|}
 				
 				\hline
 				\hline
-				Function  & Description & Mark out of 10  & comment\\
+				Function  & Description & Mark(10)  & comment\\
 				\hline
 				\hline
-				getAllBuildings  & Description & Mark out of 10 & comment\\
+				
+				getAllBuildings  & \parbox[t]{\longline}{This function returns a list of all the buildings in the GIS database} & 10 & \parbox[t]{\longline}{comment}\\
+				
 				\hline
-				getBuilding; & Description & Mark out of 10 & comment\\
+				getBuilding; & \parbox[t]{\longline}{This function returns the details of a building specified by the user} &  10 & \parbox[t]{\longline}{comment}\\
 				\hline
-				getLectureHall & Description & Mark out of 10 & comment\\
+				getLectureHall & \parbox[t]{\longline}{This function returns the location of a lecture hall specified by the user} & 10 & \parbox[t]{\longline}{comment}\\
 				\hline
-				getLectureCoordinates & Description & Mark out of 10 & comment\\
+				getLectureCoordinates & \parbox[t]{\longline}{This function returns the coordinates of a lecture hall} & 10 & \parbox[t]{\longline}{comment}\\
 				\hline
-				getBuildingCoordinates & Description & Mark out of 10 & comment\\
+				getBuildingCoordinates & \parbox[t]{\longline}{This function returns the coordinates of a specified bulding} &  10 & \parbox[t]{\longline}{comment}\\
 				\hline
-				getBuildingInRadius & Description & Mark out of 10 & comment\\
+				getBuildingInRadius & \parbox[t]{\longline}{Not sure what this does} & 10 & \parbox[t]{\longline}{comment}\\
 				\hline
-				insertBuilding; & Description & Mark out of 10 & comment\\
+				insertBuilding; & \parbox[t]{\longline}{This function inserts a building to the database using the parameters} &  10 & \parbox[t]{\longline}{comment}\\
 				\hline
-			\end{tabular}	\vline
+			\end{tabular}
 	
 		\end{table}
 	
