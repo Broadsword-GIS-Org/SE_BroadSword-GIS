@@ -25,15 +25,43 @@
 		This type of software testing is very informal and unstructured and can be performed by any stakeholder with no 			reference to 	any test case or test design documents.The person performing Ad-hoc testing has a good understanding of 		the domain and workflows of the application to try to find defects and break the software. Ad-hoc testing is intended to 		 find defects that were not found by existing test cases.
 		
 		\subsection{What is being Tested}
-		text Here
+		The GIS module is responisble for all the GIS related parts of the software, this includes admin being able to CRUD any 
+		location; a user being able to be given coordinates of a location.
+		
+		This module provide services to search for locations such as landmarks, buildings as
+		well as venues such as offices, lecture halls, labs, etc.
+		
+		\underline{Use Cases to be tested}
+		
+		Admin:
+		CRUD any kind of singular element
+		Import: Create a batch of elements via upload of a file in specified formats
+		User:
+		Get XYZ coordinates of a named location
+		
 		\subsection{Results after testing}
-		text Here
+		
+		All CRUD functionalities of the systems do work well as expected, without any delay or having to understand the code the 
+		stakeholder is able to grade this functionality as working perfect.
+		
+		When trying the create a batch of elements via upload of a file, the system files. it seems that this functionality
+		is not implemented since a stake holder does not see an option to upload a batch file of elements.
+		
+		
+		
 	
 	\subsection{Acceptance Testing}
 		\subsection{description}
 		Acceptance testing is a formal type of software testing that is performed by end user when the features have been 			delivered by developers. The aim of this testing is to check if the software confirms to their business needs and to the 		 requirements provided earlier. Acceptance tests are normally documented at the beginning of the sprint (in agile) and is 		  a means for testers and developers to work towards a common understanding and shared business domain knowledge.
 		\subsection{What is being Tested}
-		text Here
+		The main user of the system is the everyday student/lecturer and visistors to the University of Pretoria. The 
+		functionalities an end user would be intrested in testing are the following:
+		
+		\begin{description}
+ 			 \item[$\cdot$ bla1] Get XYZ coordinates of a named location
+			  \item[$\cdot$ bla1] search for locations such as landmarks, buildings as well as venues such as offices, 	lecture halls, labs, etc.
+		\end{description}
+		
 		\subsection{Results after testing}
 		text Here
 		
