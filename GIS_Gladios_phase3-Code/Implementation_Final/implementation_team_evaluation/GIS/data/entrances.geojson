@@ -1,0 +1,24 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "IT Entrance 1", "Descriptio": null }, "geometry": { "type": "Point", "coordinates": [ 28.2331212, -25.7558568, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "IT Entrance 2", "Descriptio": null }, "geometry": { "type": "Point", "coordinates": [ 28.2329844, -25.7560065, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "SSC Entrance 1", "Descriptio": null }, "geometry": { "type": "Point", "coordinates": [ 28.2312933, -25.7552709, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "SSC Entrance 2", "Descriptio": null }, "geometry": { "type": "Point", "coordinates": [ 28.2312289, -25.7556091, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Humanities Entrance", "Descriptio": null }, "geometry": { "type": "Point", "coordinates": [ 28.2307649, -25.7553507, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Old Chemistry Entrance 1", "Descriptio": null }, "geometry": { "type": "Point", "coordinates": [ 28.2309741, -25.7544109, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Old Chemistry Entrance 2", "Descriptio": null }, "geometry": { "type": "Point", "coordinates": [ 28.2308601, -25.7543493, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Zoology Entrance 1", "Descriptio": null }, "geometry": { "type": "Point", "coordinates": [ 28.230722, -25.7539809, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Chancellors Entrance 1", "Descriptio": null }, "geometry": { "type": "Point", "coordinates": [ 28.230612, -25.7542998, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Chancellors Entrance 2", "Descriptio": null }, "geometry": { "type": "Point", "coordinates": [ 28.2304014, -25.7542406, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Old Arts Entrance 1", "Descriptio": null }, "geometry": { "type": "Point", "coordinates": [ 28.2301667, -25.7541476, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "SC Entrance 1", "Descriptio": null }, "geometry": { "type": "Point", "coordinates": [ 28.2311404, -25.7542442, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "SC Entrance 2", "Descriptio": null }, "geometry": { "type": "Point", "coordinates": [ 28.2314864, -25.7542273, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "SC Entrance 3", "Descriptio": null }, "geometry": { "type": "Point", "coordinates": [ 28.2315668, -25.7545631, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "SC Entrance 4", "Descriptio": null }, "geometry": { "type": "Point", "coordinates": [ 28.2320389, -25.7546308, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "SC Entrance 5", "Descriptio": null }, "geometry": { "type": "Point", "coordinates": [ 28.23154, -25.753993, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Geography Entrance", "Descriptio": null }, "geometry": { "type": "Point", "coordinates": [ 28.230387766624094, -25.75366708417592, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Geography Entrance 2", "Descriptio": null }, "geometry": { "type": "Point", "coordinates": [ 28.230580589141034, -25.75336738543718, 0.0 ] } }
+]
+}
