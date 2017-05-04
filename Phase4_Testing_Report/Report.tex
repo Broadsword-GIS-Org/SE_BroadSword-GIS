@@ -17,16 +17,155 @@
 \newpage
 
 % Using the high level functional requirements of the NavUp system, create a test model for the various specifications of the implementation covering the core functions and innovations implemented.
-\section{Test Model}
-Insert Text Here.
 
-% Create a list of service contracts tested. Evaluate each of the use case by giving a mark out of 10 and writing a comment to justify the mark
-\section{Service Contracts Tested}
-Insert Text Here.
+\section{Over-View Tests}
+	
+	\subsection{Ad-hoc testing}
+		\subsection{description}
+		This type of software testing is very informal and unstructured and can be performed by any stakeholder with no 			reference to 	any test case or test design documents.The person performing Ad-hoc testing has a good understanding of 		the domain and workflows of the application to try to find defects and break the software. Ad-hoc testing is intended to 		 find defects that were not found by existing test cases.
+		
+		\subsection{What is being Tested}
+		text Here
+		\subsection{Results after testing}
+		text Here
+	
+	\subsection{Acceptance Testing}
+		\subsection{description}
+		Acceptance testing is a formal type of software testing that is performed by end user when the features have been 			delivered by developers. The aim of this testing is to check if the software confirms to their business needs and to the 		 requirements provided earlier. Acceptance tests are normally documented at the beginning of the sprint (in agile) and is 		  a means for testers and developers to work towards a common understanding and shared business domain knowledge.
+		\subsection{What is being Tested}
+		text Here
+		\subsection{Results after testing}
+		text Here
+		
+	\subsection{Accessibility Testing}
+		\subsection{description}
+		When doing accessibility testing, the aim of the testing is to determine if the contents of the website can be easily 			accessed by disable people. Various checks such as color and contrast (for color blind people), font size for visually 			impaired, clear and concise text that is easy to read and understand.
+		
+		\subsection{What is being Tested}
+		text Here
+		\subsection{Results after testing}
+		text Here
+	
+	
+
+\section{API Testing}
+	\subsection{Type of test to be applied: Black-Box Testing}
+		\subsection{Reason for choosen Testing Method }
+		We choose Black-Box Testing since GIS is a modulle to the NavUP software. this allows us to examine the functionality of 
+		the Gladios GIS modulle
+
+
+	\subsection{Test Cases}
+		\begin{description}
+			\item[] Functions implemeted
+		\end{description}
+	\begin{itemize}
+		
+		\item{public String geAlltBuildings(Double lat, Double lon);}
+		
+		
+		\item{public String getBuilding(Double lat, Double lon);}
+		
+		
+		\item{ArrayList getLectureHall(String building);}
+		
+		
+		\item{public ArrayList getLectureCoordinates(String room);}
+		
+		
+		\item	{public ArrayList getBuildingCoordinates(String building);   }        
+		
+		\item{public ArrayList getBuildingInRadius(double mLat, double mLon, double radius);}    
+		
+		\item {public void insertBuilding(String name, String description, String geometry, String coordinates, String table);}
+		
+	\end{itemize}
+		
+		
+		\begin{table}[h!]	
+			\newlength{\longline}
+			\settowidth{\longline}{This function returns a}
+			\centering
+			\caption{Test cases }
+			\label{tab:table1}
+			\begin{tabular}{|c|c|c|c|}
+				
+				\hline
+				\hline
+				Function  & Description & Mark(10)  & comment\\
+				\hline
+				\hline
+				
+				getAllBuildings  & \parbox[t]{\longline}{This function returns a list of all the buildings in the GIS database} & 10 & \parbox[t]{\longline}{comment}\\
+				
+				\hline
+				getBuilding; & \parbox[t]{\longline}{This function returns the details of a building specified by the user} &  10 & \parbox[t]{\longline}{comment}\\
+				\hline
+				getLectureHall & \parbox[t]{\longline}{This function returns the location of a lecture hall specified by the user} & 10 & \parbox[t]{\longline}{comment}\\
+				\hline
+				getLectureCoordinates & \parbox[t]{\longline}{This function returns the coordinates of a lecture hall} & 10 & \parbox[t]{\longline}{comment}\\
+				\hline
+				getBuildingCoordinates & \parbox[t]{\longline}{This function returns the coordinates of a specified bulding} &  10 & \parbox[t]{\longline}{comment}\\
+				\hline
+				getBuildingInRadius & \parbox[t]{\longline}{Not sure what this does} & 10 & \parbox[t]{\longline}{comment}\\
+				\hline
+				insertBuilding; & \parbox[t]{\longline}{This function inserts a building to the database using the parameters} &  10 & \parbox[t]{\longline}{comment}\\
+				\hline
+			\end{tabular}
+	
+		\end{table}
+	
+		
+
+
 
 % Create a list of non-functional requirements tested, then evaluate each of these giving a mark out of 10 and writing comments to justify the mark.
 \section{Non-Functional Requirements Tested}
-Insert Text Here.
+
+\subsection{List of Non-Functional Requirements}
+
+	\begin{description}
+		\item[] Non-Functional Requirements
+	\end{description}
+	\begin{itemize}
+	
+		\item Performance 
+		\item Scalability 
+		\item Security 
+		\item Accessibility
+		\item Maintainability
+		
+	\end{itemize}
+
+	\subsection{Marking}
+	
+			\begin{table}[h!]	
+			\settowidth{\longline}{This function returns a}
+			\centering
+			\caption{Non-Functional Requirements}
+			\label{tab:table2}
+			\begin{tabular}{|c|c|c|c|}
+				
+				\hline
+				\hline
+				Function  & Description & Mark(10)  & comment\\
+				\hline
+				\hline
+				
+				Performance  & \parbox[t]{\longline}{Does the system perform well under different possible environments and situations} & 10 & \parbox[t]{\longline}{comment}\\
+				
+				\hline
+				Scalability & \parbox[t]{\longline}{Can the system handle a sufficient amount of data at a time and overtime} &  10 & \parbox[t]{\longline}{comment}\\
+				\hline
+				Security & \parbox[t]{\longline}{Is the system sufficiently protected from the possible threats that could occur} & 10 & \parbox[t]{\longline}{comment}\\
+				\hline
+				Accessibility & \parbox[t]{\longline}{Is the system easily accessible to people with disabilities} & 10 & \parbox[t]{\longline}{comment}\\
+				\hline
+				Maintainability & \parbox[t]{\longline}{Can the system be maintained with ease regarding database and source code} &  10 & \parbox[t]{\longline}{comment}\\
+				\hline
+			\end{tabular}
+			
+		\end{table}
 
 % Evaluate the test cases of the previous team for non-functional requirements using your own criteria, such as coverage and efficiency of their test cases. Give a mark out 10, then write a comment to justify the mark.
 % When the available test is inadequate, you should add more test.
