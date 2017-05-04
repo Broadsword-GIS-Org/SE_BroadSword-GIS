@@ -159,6 +159,53 @@ Insert Text Here.
 % Evaluate the test cases of the previous team for non-functional requirements using your own criteria, such as coverage and efficiency of their test cases. Give a mark out 10, then write a comment to justify the mark.
 % When the available test is inadequate, you should add more test.
 \section{Evaluation of Test Cases}
-Insert Text Here.
+
+	\begin{enumerate}
+		\item \textbf {Creating map object linked to a spacial database}\\
+		\textbf{Mark: }
+		4.\\
+		\textbf{Comment: }
+		Method takes in database details and successfully returns a new GIS map object, however no checks are being performed to validate the returned object.
+		The method does catch Exceptions, but only logs the error. No proper exception handling is being performed.
+		
+		While the method does work with correct paramaters, no unit tests were written and as such the method was not properly tested.
+		Examples of unit tests that should have been written are as follows: 
+		\begin{itemize}
+			\item All parameters entered, and all parameters are correct
+			\item All parameters entered, some are correct and some are incorrect
+			\item All parameters entered, all are incorrect
+			\item Some parameters entered, all entered are correct
+			\item Some parameters entered, only some of the entered parameters are correct
+			\item Some parameters entered, all entered are incorrect
+			\item No parameters entered
+		\end{itemize}	
+			
+		\item \textbf {Getting all buildings}\\
+		\textbf{Mark: }
+		6.\\
+		\textbf{Comment: }
+		Method takes no parameters and returns and array that contains all buildings from the database.
+		The method does catch Exceptions, but only logs the error. No proper exception handling is being performed.
+		
+		While the method does work but no unit tests were written. Even though the method is so simplistic, unit tests should still have been written. Only two tests will have sufficed for this test:  
+		\begin{itemize}
+			\item The database is up and running, method returns correctly
+			\item The database is not up and running, method gracefully fails and correctly handles the exception.
+		\end{itemize}	
+		
+		\item \textbf {Get specific building's coordinates}\\
+		\textbf{Mark: }
+		5.\\
+		\textbf{Comment: }
+		Method takes in a string (building name) and returns the coordinates of that building.
+		The method does catch Exceptions, but only logs the error. No proper exception handling is being performed.
+		
+		While the method does work with correct paramaters, no unit tests were written and as such the method was not properly tested.
+		Only two tests will have sufficed for this test:  
+		\begin{itemize}
+			\item The building name entered does exist in the database, coordinates are returned
+			\item The building name entered does not exist in the database, method gracefully fails and correctly handles the exception.
+		\end{itemize}	
+	\end{enumerate}
 
 \end{document}

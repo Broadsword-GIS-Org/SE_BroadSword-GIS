@@ -1,5 +1,14 @@
 *.class
 
+# Bernhard's edit to gitignore to not commit texmaker artofacts
+*.aux
+*.lof
+*.log
+*.out
+*.toc
+*.synctex.gz
+# End of Bernhard's edit
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
