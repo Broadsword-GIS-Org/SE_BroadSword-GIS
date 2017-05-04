@@ -1,0 +1,164 @@
+\documentclass[12pt]{article}
+
+\begin{document}
+
+\title{\Huge Broadsword GIS \\ NavUP \\ System Testing \\ Report}
+\author{\Large Johan du Plooy - 12070794 \\
+		\Large Dimpho Mahoko - 15175091 \\
+		\Large Bernhard Schuld - 10297902 \\
+		\Large Mankgwanyane Tlaka - 14351872 \\
+		\Large Kamogelo Tsipa - 13010931 \\
+		\Large Hendrik van der Mewe - 15101283}
+\date{\today}
+\maketitle
+
+\newpage
+\tableofcontents
+\newpage
+
+% Using the high level functional requirements of the NavUp system, create a test model for the various specifications of the implementation covering the core functions and innovations implemented.
+
+\section{Over-View Tests}
+	
+	\subsection{Ad-hoc testing}
+		\subsubsection{description}
+		This type of software testing is very informal and unstructured and can be performed by any stakeholder with no 			reference to 	any test case or test design documents.The person performing Ad-hoc testing has a good understanding of 		the domain and workflows of the application to try to find defects and break the software. Ad-hoc testing is intended to 		 find defects that were not found by existing test cases.
+		
+		\subsubsection{What is being Tested}
+		The GIS module is responisble for all the GIS related parts of the software, this includes admin being able to CRUD any 
+		location; a user being able to be given coordinates of a location.
+		
+		This module provide services to search for locations such as landmarks, buildings as
+		well as venues such as offices, lecture halls, labs, etc.\\
+		
+		\underline{Use Cases to be tested}
+		
+		Admin:
+			CRUD any kind of singular element
+
+			Import: Create a batch of elements via upload of a file in specified formats.\\
+
+		User:
+		Get XYZ coordinates of a named location
+		
+		\subsubsection{Results after testing}
+		
+		All CRUD functionalities of the systems do work well as expected, without any delay or having to understand the code the stakeholder is able to grade this functionality as working perfect.
+		
+		When trying the create a batch of elements via uploading  a file, the system files. it seems that this functionality is not implemented since a stake holder does not see an option to upload a batch file of elements.
+		
+		
+		
+	
+	\subsection{Acceptance Testing}
+		\subsubsection{description}
+		Acceptance testing is a formal type of software testing that is performed by end user when the features have been 			delivered by developers. The aim of this testing is to check if the software confirms to their business needs and to the 		 requirements provided earlier. Acceptance tests are normally documented at the beginning of the sprint (in agile) and is 		  a means for testers and developers to work towards a common understanding and shared business domain knowledge.
+		\subsubsection{What is being Tested}
+		The main user of the system is the everyday student/lecturer and visistors to the University of Pretoria. The 
+		functionalities an end user would be intrested in testing are the following:
+		
+		\begin {itemize}
+ 			 \item Get XYZ coordinates of a named location
+			  \item  search for locations such as landmarks, buildings as well as venues such as offices, 							lecture halls, labs, etc.
+		\end {itemize}
+		
+		
+		\subsubsection{Results after testing}
+		Acceptance testing meets the user's expectations. The modulle is able to perfome all the functionalities that the end 			user is intrested in. 
+		The end user grades the system a 9/10 for the functions mentioned above.
+		
+		
+	\subsection{Accessibility Testing}
+		\subsubsection{description}
+		When doing accessibility testing, the aim of the testing is to determine if the contents of the system can be easily 			accessed by disable people. Various checks such as color and contrast (for color blind people), font size for visually 			impaired, clear and concise text that is easy to read and understand.
+		
+		\subsubsection{What is being Tested}
+		The GIS is a moduleIt is about the creation and maintenance of a GIS Map of the campus and persisting information that 			can be applied to determine the location of a device based on WiFi signal strengths and other available sources of GIS 			information.
+		\subsubsection{Results after testing}
+		Accessibility testing assummes that the entire system is complete and features which are associated with Human and 			Computing interaction and User Experience are already in place. as a result of this, the results of this test are depended on the access 			module and one cannot conclude good results by only looking at the GIS modulle 
+	
+	
+
+\section{API Testing}
+	\subsection{Type of test to be applied: Black-Box Testing}
+		\subsubsection{Reason for choosen Testing Method }
+		We choose Black-Box Testing since GIS is a modulle to the NavUP software. this allows us to examine the functionality of 
+		the Gladios GIS modulle.
+
+
+	%Done and done
+	\subsection{Test Cases}
+		\begin{description}
+			\item[] Functions implemeted
+		\end{description}
+	\begin{itemize}
+		
+		\item{public String geAlltBuildings(Double lat, Double lon);}
+		
+		
+		\item{public String getBuilding(Double lat, Double lon);}
+		
+		
+		\item{ArrayList getLectureHall(String building);}
+		
+		
+		\item{public ArrayList getLectureCoordinates(String room);}
+		
+		
+		\item	{public ArrayList getBuildingCoordinates(String building);   }        
+		
+		\item{public ArrayList getBuildingInRadius(double mLat, double mLon, double radius);}    
+		
+		\item {public void insertBuilding(String name, String description, String geometry, String coordinates, String table);}
+	\end{itemize}
+		
+		
+		\begin{table}[h!]	
+			\newlength{\longline}
+			\settowidth{\longline}{This function returns a}
+			\centering
+			\caption{Test cases }
+			\label{tab:table1}
+			\begin{tabular}{|c|c|c|c|}
+				
+				\hline
+				\hline
+				Function  & Description & Mark(10)  & comment\\
+				\hline
+				\hline
+				
+				getAllBuildings  & \parbox[t]{\longline}{This function returns a list of all the buildings in the GIS database} & 6 & \parbox[t]{\longline}{Apply additional error handling \\ Function very reliable}\\
+				
+				\hline
+				getBuilding; & \parbox[t]{\longline}{This function returns the details of a building specified by the user} &  10 & \parbox[t]{\longline}{comment}\\
+				\hline
+				getLectureHall & \parbox[t]{\longline}{This function returns the location of a lecture hall specified by the user} & 6 & \parbox[t]{\longline}{Make use of quey optimizing strategies to improve query execution time \\ Add Additional error handling for incorrect request \\ Function very reliable}\\
+				\hline
+				getLectureCoordinates & \parbox[t]{\longline}{This function returns the coordinates of a lecture hall} & 10 & \parbox[t]{\longline}{comment}\\
+				\hline
+				getBuildingCoordinates & \parbox[t]{\longline}{This function returns the coordinates of a specified bulding} &  10 & \parbox[t]{\longline}{comment}\\
+				\hline
+				getBuildingInRadius & \parbox[t]{\longline}{Not sure what this does} & 10 & \parbox[t]{\longline}{comment}\\
+				\hline
+				insertBuilding; & \parbox[t]{\longline}{This function inserts a building to the database using the parameters} &  10 & \parbox[t]{\longline}{comment}\\
+				\hline
+			\end{tabular}
+	
+		\end{table}
+	
+		%	\begin{list}{functions}{2}	
+		%\end{list}
+		
+
+
+
+% Create a list of non-functional requirements tested, then evaluate each of these giving a mark out of 10 and writing comments to justify the mark.
+\section{Non-Functional Requirements Tested}
+Insert Text Here.
+
+% Evaluate the test cases of the previous team for non-functional requirements using your own criteria, such as coverage and efficiency of their test cases. Give a mark out 10, then write a comment to justify the mark.
+% When the available test is inadequate, you should add more test.
+\section{Evaluation of Test Cases}
+Insert Text Here.
+
+\end{document}
