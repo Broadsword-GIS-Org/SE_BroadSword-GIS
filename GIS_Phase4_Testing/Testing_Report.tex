@@ -154,8 +154,50 @@
 
 % Create a list of non-functional requirements tested, then evaluate each of these giving a mark out of 10 and writing comments to justify the mark.
 \section{Non-Functional Requirements Tested}
-Insert Text Here.
+	\subsection{List of Non-Functional Requirements}
 
+\begin{description}
+	\item[] Non-Functional Requirements
+\end{description}
+\begin{itemize}
+	
+	\item Performance 
+	\item Scalability 
+	\item Security 
+	\item Accessibility
+	\item Maintainability
+	
+\end{itemize}
+
+\subsection{Marking}
+
+\begin{table}[h!]	
+	\settowidth{\longline}{This function returns a}
+	\centering
+	\caption{Non-Functional Requirements}
+	\label{tab:table2}
+	\begin{tabular}{|c|c|c|c|}
+		
+		\hline
+		\hline
+		Function  & Description & Mark(10)  & comment\\
+		\hline
+		\hline
+		
+		Performance  & \parbox[t]{\longline}{Does the system perform well under different possible environments and situations} & 10 & \parbox[t]{\longline}{System performance is sufficient}\\
+		
+		\hline
+		Scalability & \parbox[t]{\longline}{Can the system handle a sufficient amount of data at a time and overtime} &  7 & \parbox[t]{\longline}{Processing lots of data at once insufficient. Can only add 1 building at a time}\\
+		\hline
+		Security & \parbox[t]{\longline}{Is the system sufficiently protected from the possible threats that could occur} & 8 & \parbox[t]{\longline}{Confirm user type before fulfilling the query, as a guest user can access admin user functions.}\\
+		\hline
+		Accessibility & \parbox[t]{\longline}{Is the system easily accessible to people with disabilities} & 6 & \parbox[t]{\longline}{Does not indicate friendly wheel chair paths or any disability provision}\\
+		\hline
+		Maintainability & \parbox[t]{\longline}{Can the system be maintained with ease regarding database and source code} &  9 & \parbox[t]{\longline}{Updating the database works fine and the source code is structured in a modular enough manner to add new features with few changes to the rest of it}\\
+		\hline
+	\end{tabular}
+	
+\end{table}
 % Evaluate the test cases of the previous team for non-functional requirements using your own criteria, such as coverage and efficiency of their test cases. Give a mark out 10, then write a comment to justify the mark.
 % When the available test is inadequate, you should add more test.
 \section{Evaluation of Test Cases}
