@@ -205,7 +205,46 @@ Insert Text Here.
 		\begin{itemize}
 			\item The building name entered does exist in the database, coordinates are returned
 			\item The building name entered does not exist in the database, method gracefully fails and correctly handles the exception.
-		\end{itemize}	
+		\end{itemize}
+		
+		%Start of Johan's half
+		\item \textbf Get All Venues located at a given Building:\\
+		\textbf{Mark: }
+		5.\\
+		\textbf{Comment: }
+		The method successfully takes in a building name, Zoology, as a string parameter and returns all the venues available within the Zoology building, however the returned object is not being checked or matched with an expected output to ensure a success or fail.
+		
+		A minimum of two possible outputs can be tested for this method:
+		\begin{itemize}
+			\item A building name is specified and 1 or more Venues are returned in an array object.  
+			\item A building name is specified but 0 results are returned most likely because the building does not match any buildings in the database, or there are no lecture halls in that building.  
+		\end{itemize}
+		
+		\item \textbf Get Coordinates of a given Venue:\\
+		\textbf{Mark: }
+		5.\\
+		\textbf{Comment: }
+		The method succeeds in retrieving the coordinates for Room 3-8 in a building previously set, but the method's output is not being tested for a success or fail state.  
+		
+		A minimum of two possible outputs can be tested for this method:
+		\begin{itemize}
+			\item A Venue name is specified and the xy coordinates are returned in an array object of size 2.  
+			\item A Venue name is specified but no results are returned most likely because the Venue does not match any Venues in the database.  
+		\end{itemize}
+		
+		\item \textbf Get all buildings in a specified radius of a given building:\\
+		\textbf{Mark: }
+		5.\\
+		\textbf{Comment: }
+		The method accepts the xy coordinates of the EMS Building, along with a given radius and returns a list of all the buildings that fall within the given radius of the specified building, however no checks are being performed to confirm that the returned object matches what is expected.
+		
+		A minimum of two possible outputs can be tested for this method:
+		\begin{itemize}
+			\item A building's xy coordinates are specified and 1 or more buildings along with their coordinates are returned in an array object.
+			\item A building's xy coordinates are specified but 0 results are returned most likely because the building does not match any buildings in the database, or there are no buildings in the given radius.
+		\end{itemize}
+		%End of Johan's half
+		
 	\end{enumerate}
 
 \end{document}
